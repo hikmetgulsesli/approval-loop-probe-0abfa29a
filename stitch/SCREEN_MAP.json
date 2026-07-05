@@ -1,0 +1,29 @@
+[
+  {
+    "screenId": "65d1da2ef2ca41a58d933102d8ec7fa9",
+    "name": "Insights - Approval Loop Probe",
+    "type": "app-screen",
+    "description": "Insights - Approval Loop Probe screen",
+    "surfaceIds": [
+      "SURF_INSIGHTS"
+    ]
+  },
+  {
+    "screenId": "4ebb4d931aee41ab83e24efac56442ec",
+    "name": "Record Editor - Approval Loop Probe",
+    "type": "form",
+    "description": "Record Editor - Approval Loop Probe screen",
+    "surfaceIds": [
+      "SURF_RECORD_EDITOR"
+    ]
+  },
+  {
+    "screenId": "7e22d4f91149413590827caaa6b5e91a",
+    "name": "Record Operations - Approval Loop Probe",
+    "type": "app-screen",
+    "description": "Record Operations - Approval Loop Probe screen",
+    "surfaceIds": [
+      "SURF_RECORD_OPERATIONS"
+    ]
+  }
+]

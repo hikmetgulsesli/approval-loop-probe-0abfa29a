@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Record Operations - Approval Loop Probe</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#6ffbbe",
+                    "outline-variant": "#c3c6d7",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-container": "#996100",
+                    "outline": "#737686",
+                    "on-background": "#0d1c2e",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "surface-container-highest": "#d5e3fc",
+                    "surface-container-high": "#dce9ff",
+                    "surface-variant": "#d5e3fc",
+                    "surface-container-low": "#eff4ff",
+                    "on-primary-fixed": "#00174b",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "tertiary": "#784b00",
+                    "surface-container": "#e6eeff",
+                    "on-secondary-container": "#00714d",
+                    "surface-tint": "#0053db",
+                    "on-tertiary-container": "#ffeedd",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-surface": "#0d1c2e",
+                    "secondary-container": "#6cf8bb",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "secondary": "#006c49",
+                    "surface-dim": "#ccdbf3",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#2563eb",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "inverse-primary": "#b4c5ff",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-fixed": "#2a1700",
+                    "on-primary-container": "#eeefff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "inverse-surface": "#233144",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#434655",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "tertiary-fixed": "#ffddb8",
+                    "error-container": "#ffdad6",
+                    "background": "#f8f9ff",
+                    "surface-bright": "#f8f9ff",
+                    "primary-fixed": "#dbe1ff",
+                    "primary": "#004ac6",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "row-height-sm": "32px",
+                    "gutter": "12px",
+                    "container-padding": "16px",
+                    "component-gap-sm": "8px",
+                    "unit": "4px",
+                    "component-gap-xs": "4px",
+                    "row-height-md": "40px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Geist"
+                    ],
+                    "body-sm": [
+                            "Geist"
+                    ],
+                    "label-md": [
+                            "Geist"
+                    ],
+                    "headline-sm": [
+                            "Geist"
+                    ],
+                    "tabular-nums": [
+                            "Geist"
+                    ],
+                    "label-caps": [
+                            "Geist"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "18px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-sm": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "tabular-nums": [
+                            "13px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-caps": [
+                            "11px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Geist', sans-serif; background-color: #F8FAFC; color: #0d1c2e; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .fill-icon { font-variation-settings: 'FILL' 1; }
+        
+        /* Custom Scrollbar for dense tables */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #c3c6d7; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #737686; }
+    </style>
+</head>
+<body class="flex h-screen overflow-hidden bg-background">
+<!-- SideNavBar -->
+<nav class="docked h-screen left-0 w-64 border-r border-outline-variant dark:border-outline flat no shadows bg-surface-container-low dark:bg-on-background flex flex-col h-full p-gutter gap-component-gap-sm shrink-0 z-20">
+<!-- Header -->
+<div class="flex items-center gap-3 p-2 mb-4">
+<div class="w-8 h-8 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-bold">L</div>
+<div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-on-surface dark:text-surface-bright">Loop Probe</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">V2.4.1-Stable</p>
+</div>
+</div>
+<!-- Primary CTA -->
+<button class="w-full bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-md text-label-md py-2 px-4 rounded transition-colors mb-6 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            New Record
+        </button>
+<!-- Navigation Links -->
+<div class="flex-1 flex flex-col gap-1">
+<!-- Active Tab: Operations -->
+<a class="flex items-center gap-3 px-3 py-2 bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary font-semibold rounded-lg active:scale-95 duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined fill-icon text-[20px]">settings_suggest</span>
+                Operations
+            </a>
+<!-- Inactive Tab: Editor -->
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all active:scale-95 duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">edit_note</span>
+                Editor
+            </a>
+<!-- Inactive Tab: Insights -->
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all active:scale-95 duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">analytics</span>
+                Insights
+            </a>
+</div>
+<!-- Footer Links -->
+<div class="mt-auto border-t border-outline-variant pt-2 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all active:scale-95 duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg hover:bg-surface-container-high dark:hover:bg-surface-variant transition-all active:scale-95 duration-150 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+                Support
+            </a>
+</div>
+</nav>
+<!-- Main Workspace -->
+<div class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar (Adapted for desktop context, acting as context header) -->
+<header class="docked full-width top-0 border-b border-outline-variant dark:border-outline flat no shadows bg-surface-container-lowest dark:bg-on-background flex justify-between items-center w-full px-container-padding h-row-height-md shrink-0 z-10">
+<div class="flex items-center gap-4">
+<h2 class="font-headline-sm text-headline-sm font-semibold text-primary dark:text-primary-fixed-dim">Approval Loop Probe</h2>
+<div class="h-4 w-px bg-outline-variant"></div>
+<span class="font-label-md text-label-md text-on-surface-variant">Record Operations</span>
+</div>
+<div class="flex items-center gap-4 font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-on-surface">Ready/Paused</span>
+</div>
+<div class="text-on-surface-variant">
+                    Last Refreshed: 12:45 PM
+                </div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-auto p-6 flex flex-col gap-6">
+<!-- Page Header & Metrics -->
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface mb-1">Record Operations</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage and monitor approval loop records.</p>
+</div>
+<button class="bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-md text-label-md py-2 px-4 rounded transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        New Record
+                    </button>
+</div>
+<!-- Compact Metric Tiles (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-4 flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Total Records</span>
+<span class="font-tabular-nums text-tabular-nums text-2xl font-semibold text-on-surface">1,248</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-4 flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Pending Approval</span>
+<span class="font-tabular-nums text-tabular-nums text-2xl font-semibold text-tertiary-container">374</span>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-4 flex flex-col gap-2 relative overflow-hidden">
+<div class="absolute inset-0 bg-error/5"></div>
+<span class="font-label-caps text-label-caps text-error relative z-10 uppercase">Error State</span>
+<span class="font-tabular-nums text-tabular-nums text-2xl font-semibold text-error relative z-10">125</span>
+</div>
+</div>
+</div>
+<!-- Workspace Grid (Table + Detail Panel) -->
+<div class="flex-1 flex gap-6 min-h-[500px]">
+<!-- Data Table Section -->
+<div class="flex-1 flex flex-col bg-surface-container-lowest border border-outline-variant rounded overflow-hidden shadow-sm">
+<!-- Table Toolbar -->
+<div class="p-3 border-b border-outline-variant bg-surface-container-low flex justify-between items-center">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-8 pr-3 py-1.5 text-body-sm font-body-sm border border-outline-variant rounded focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Search records..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-3 py-1.5 border border-outline-variant rounded bg-surface-container-lowest hover:bg-surface-container-low transition-colors font-label-md text-label-md text-on-surface">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+                                Filter
+                            </button>
+</div>
+</div>
+<!-- Dense Table -->
+<div class="flex-1 overflow-auto">
+<table class="w-full text-left border-collapse">
+<thead class="sticky top-0 bg-surface-container-low z-10 border-b border-outline-variant font-label-caps text-label-caps text-on-surface-variant uppercase">
+<tr>
+<th class="py-2 px-4 font-semibold">Record ID</th>
+<th class="py-2 px-4 font-semibold">Name</th>
+<th class="py-2 px-4 font-semibold">Priority</th>
+<th class="py-2 px-4 font-semibold">Status</th>
+<th class="py-2 px-4 font-semibold">Last Updated</th>
+<th class="py-2 px-4 font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface divide-y divide-surface-container-high">
+<!-- Row 1: Selected -->
+<tr class="bg-primary/5 hover:bg-primary/10 transition-colors cursor-pointer group">
+<td class="py-2 px-4 font-tabular-nums text-primary font-medium">REC-8921</td>
+<td class="py-2 px-4 font-medium">Q3 Budget Allocation Matrix</td>
+<td class="py-2 px-4"><span class="px-2 py-0.5 bg-tertiary-container/10 text-tertiary-container rounded text-xs font-medium">High</span></td>
+<td class="py-2 px-4">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span>
+                                            Pending
+                                        </div>
+</td>
+<td class="py-2 px-4 font-tabular-nums text-on-surface-variant">10 mins ago</td>
+<td class="py-2 px-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1 rounded hover:bg-surface-container-high opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- Row 2: Approved -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="py-2 px-4 font-tabular-nums text-on-surface-variant">REC-8920</td>
+<td class="py-2 px-4">Vendor Contract Setup - Alpha</td>
+<td class="py-2 px-4"><span class="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant rounded text-xs">Normal</span></td>
+<td class="py-2 px-4">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                            Approved
+                                        </div>
+</td>
+<td class="py-2 px-4 font-tabular-nums text-on-surface-variant">1 hr ago</td>
+<td class="py-2 px-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1 rounded hover:bg-surface-container-high opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Error -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="py-2 px-4 font-tabular-nums text-on-surface-variant">REC-8919</td>
+<td class="py-2 px-4">Data Sync Process #442</td>
+<td class="py-2 px-4"><span class="px-2 py-0.5 bg-error/10 text-error rounded text-xs font-medium">Critical</span></td>
+<td class="py-2 px-4">
+<div class="flex items-center gap-1.5 text-error">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                                            Error
+                                        </div>
+</td>
+<td class="py-2 px-4 font-tabular-nums text-on-surface-variant">2 hrs ago</td>
+<td class="py-2 px-4 text-right">
+<button class="text-error hover:text-on-error-container transition-colors p-1 rounded hover:bg-error/10 text-xs font-medium border border-error/30 opacity-0 group-hover:opacity-100 focus:opacity-100">
+                                            Retry Load
+                                        </button>
+</td>
+</tr>
+<!-- Row 4: Rejected -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer group">
+<td class="py-2 px-4 font-tabular-nums text-on-surface-variant">REC-8918</td>
+<td class="py-2 px-4">Internal Transfer Req</td>
+<td class="py-2 px-4"><span class="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant rounded text-xs">Normal</span></td>
+<td class="py-2 px-4">
+<div class="flex items-center gap-1.5 text-outline">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                                            Rejected
+                                        </div>
+</td>
+<td class="py-2 px-4 font-tabular-nums text-on-surface-variant">5 hrs ago</td>
+<td class="py-2 px-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors p-1 rounded hover:bg-surface-container-high opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</td>
+</tr>
+<!-- Filler Rows for density -->
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer"><td class="py-2 px-4 font-tabular-nums text-on-surface-variant">REC-8917</td><td class="py-2 px-4">System Update Log</td><td class="py-2 px-4"><span class="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant rounded text-xs">Normal</span></td><td class="py-2 px-4"><div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Approved</div></td><td class="py-2 px-4 font-tabular-nums text-on-surface-variant">1 day ago</td><td class="py-2 px-4"></td></tr>
+<tr class="hover:bg-surface-container-low transition-colors cursor-pointer"><td class="py-2 px-4 font-tabular-nums text-on-surface-variant">REC-8916</td><td class="py-2 px-4">Policy Revision B</td><td class="py-2 px-4"><span class="px-2 py-0.5 bg-tertiary-container/10 text-tertiary-container rounded text-xs font-medium">High</span></td><td class="py-2 px-4"><div class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Approved</div></td><td class="py-2 px-4 font-tabular-nums text-on-surface-variant">1 day ago</td><td class="py-2 px-4"></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Selection Preview Panel (REC-8921) -->
+<div class="w-80 bg-surface-container-lowest border border-outline-variant rounded flex flex-col shadow-sm shrink-0">
+<div class="p-4 border-b border-outline-variant bg-surface flex justify-between items-start">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase block mb-1">Selected Record</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-on-surface">REC-8921</h3>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-container-high p-1 rounded transition-colors">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="p-4 flex-1 overflow-auto flex flex-col gap-6">
+<!-- Details -->
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-2">Details</h4>
+<div class="flex flex-col gap-2 font-body-sm text-body-sm">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Name</span>
+<span class="font-medium text-right">Q3 Budget Allocation Matrix</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Status</span>
+<span class="font-medium text-tertiary-container">Pending Approval</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Owner</span>
+<span class="font-medium">Sarah Jenkins</span>
+</div>
+</div>
+</div>
+<!-- Associated Metrics -->
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-2">Associated Metrics</h4>
+<div class="grid grid-cols-2 gap-2">
+<div class="bg-surface-container-low p-2 rounded border border-surface-container-high">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Est. Impact</div>
+<div class="font-tabular-nums text-tabular-nums font-semibold">$45.2K</div>
+</div>
+<div class="bg-surface-container-low p-2 rounded border border-surface-container-high">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Risk Score</div>
+<div class="font-tabular-nums text-tabular-nums font-semibold text-tertiary-container">Medium (4.2)</div>
+</div>
+</div>
+</div>
+<!-- Audit Trail / Timeline -->
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-3">Activity History</h4>
+<div class="relative pl-3 border-l-2 border-surface-container-highest space-y-4 font-body-sm text-body-sm">
+<div class="relative">
+<span class="absolute -left-[17px] top-1 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-2 ring-surface-container-lowest"></span>
+<div class="text-on-surface font-medium">Approval Requested</div>
+<div class="text-on-surface-variant font-tabular-nums text-xs mt-0.5">Today, 12:35 PM by Sarah J.</div>
+</div>
+<div class="relative">
+<span class="absolute -left-[17px] top-1 w-2.5 h-2.5 rounded-full bg-outline-variant ring-2 ring-surface-container-lowest"></span>
+<div class="text-on-surface font-medium">Record Created</div>
+<div class="text-on-surface-variant font-tabular-nums text-xs mt-0.5">Today, 09:12 AM by System</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-4 border-t border-outline-variant flex gap-2 bg-surface-container-low">
+<button class="flex-1 bg-surface-container-lowest border border-outline-variant hover:bg-surface-container-high text-on-surface font-label-md text-label-md py-1.5 px-3 rounded transition-colors text-center">
+                            Review
+                        </button>
+<button class="flex-1 bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-md text-label-md py-1.5 px-3 rounded transition-colors text-center">
+                            Approve
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
