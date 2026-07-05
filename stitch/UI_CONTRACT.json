@@ -1,0 +1,589 @@
+[
+  {
+    "screenId": "65d1da2ef2ca41a58d933102d8ec7fa9",
+    "screenTitle": "Insights - Approval Loop Probe",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 136
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 141
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 146
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 153
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 157
+      },
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "Filter",
+        "line": 192
+      },
+      {
+        "type": "button",
+        "label": "Export Summary",
+        "line": 196
+      },
+      {
+        "type": "button",
+        "label": "Review",
+        "line": 297
+      },
+      {
+        "type": "button",
+        "label": "Trace",
+        "line": 305
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 136
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 141
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 146
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 153
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 157
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 129
+      },
+      {
+        "type": "button",
+        "label": "Filter",
+        "line": 192
+      },
+      {
+        "type": "button",
+        "label": "Export Summary",
+        "line": 196
+      },
+      {
+        "type": "button",
+        "label": "Review",
+        "line": 297
+      },
+      {
+        "type": "button",
+        "label": "Trace",
+        "line": 305
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 10,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "4ebb4d931aee41ab83e24efac56442ec",
+    "screenTitle": "Record Editor - Approval Loop Probe",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 170
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 176
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 182
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 190
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 196
+      },
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 163
+      },
+      {
+        "type": "button",
+        "label": "Cancel",
+        "line": 227
+      },
+      {
+        "type": "button",
+        "label": "Save Record",
+        "line": 228
+      },
+      {
+        "type": "button",
+        "label": "Add Metric",
+        "line": 296
+      },
+      {
+        "type": "button",
+        "label": "Remove Metric",
+        "line": 319
+      },
+      {
+        "type": "button",
+        "label": "Remove Metric",
+        "line": 332
+      },
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 242
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 247
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 259
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 263
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 267
+      },
+      {
+        "type": "input",
+        "label": "textarea",
+        "inputType": "textarea",
+        "line": 282
+      },
+      {
+        "type": "input",
+        "label": "Key",
+        "inputType": "text",
+        "placeholder": "Key",
+        "line": 313
+      },
+      {
+        "type": "input",
+        "label": "Value",
+        "inputType": "text",
+        "placeholder": "Value",
+        "line": 316
+      },
+      {
+        "type": "input",
+        "label": "Key",
+        "inputType": "text",
+        "placeholder": "Key",
+        "line": 326
+      },
+      {
+        "type": "input",
+        "label": "Value",
+        "inputType": "text",
+        "placeholder": "Value",
+        "line": 329
+      },
+      {
+        "type": "form",
+        "label": "form",
+        "line": 231
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 170
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 176
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 182
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 190
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 196
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 163
+      },
+      {
+        "type": "button",
+        "label": "Cancel",
+        "line": 227
+      },
+      {
+        "type": "button",
+        "label": "Save Record",
+        "line": 228
+      },
+      {
+        "type": "button",
+        "label": "Add Metric",
+        "line": 296
+      },
+      {
+        "type": "button",
+        "label": "Remove Metric",
+        "line": 319
+      },
+      {
+        "type": "button",
+        "label": "Remove Metric",
+        "line": 332
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "text",
+        "inputType": "text",
+        "line": 242
+      },
+      {
+        "type": "input",
+        "label": "select",
+        "inputType": "select",
+        "line": 247
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 259
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 263
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 267
+      },
+      {
+        "type": "input",
+        "label": "textarea",
+        "inputType": "textarea",
+        "line": 282
+      },
+      {
+        "type": "input",
+        "label": "Key",
+        "inputType": "text",
+        "placeholder": "Key",
+        "line": 313
+      },
+      {
+        "type": "input",
+        "label": "Value",
+        "inputType": "text",
+        "placeholder": "Value",
+        "line": 316
+      },
+      {
+        "type": "input",
+        "label": "Key",
+        "inputType": "text",
+        "placeholder": "Key",
+        "line": 326
+      },
+      {
+        "type": "input",
+        "label": "Value",
+        "inputType": "text",
+        "placeholder": "Value",
+        "line": 329
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 22,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "7e22d4f91149413590827caaa6b5e91a",
+    "screenTitle": "Record Operations - Approval Loop Probe",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 181
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 186
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 191
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 198
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 202
+      },
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 174
+      },
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 236
+      },
+      {
+        "type": "button",
+        "label": "Filter",
+        "line": 269
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 302
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 320
+      },
+      {
+        "type": "button",
+        "label": "Retry Load",
+        "line": 338
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 356
+      },
+      {
+        "type": "button",
+        "label": "close",
+        "line": 375
+      },
+      {
+        "type": "button",
+        "label": "Review",
+        "line": 430
+      },
+      {
+        "type": "button",
+        "label": "Approve",
+        "line": 433
+      },
+      {
+        "type": "input",
+        "label": "Search records...",
+        "inputType": "text",
+        "placeholder": "Search records...",
+        "line": 266
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Operations",
+        "href": "#",
+        "line": 181
+      },
+      {
+        "type": "link",
+        "label": "Editor",
+        "href": "#",
+        "line": 186
+      },
+      {
+        "type": "link",
+        "label": "Insights",
+        "href": "#",
+        "line": 191
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 198
+      },
+      {
+        "type": "link",
+        "label": "Support",
+        "href": "#",
+        "line": 202
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 174
+      },
+      {
+        "type": "button",
+        "label": "New Record",
+        "line": 236
+      },
+      {
+        "type": "button",
+        "label": "Filter",
+        "line": 269
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 302
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 320
+      },
+      {
+        "type": "button",
+        "label": "Retry Load",
+        "line": 338
+      },
+      {
+        "type": "button",
+        "label": "edit",
+        "line": 356
+      },
+      {
+        "type": "button",
+        "label": "close",
+        "line": 375
+      },
+      {
+        "type": "button",
+        "label": "Review",
+        "line": 430
+      },
+      {
+        "type": "button",
+        "label": "Approve",
+        "line": 433
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Search records...",
+        "inputType": "text",
+        "placeholder": "Search records...",
+        "line": 266
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 16,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
