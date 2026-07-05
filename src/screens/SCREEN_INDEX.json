@@ -1,0 +1,266 @@
+[
+  {
+    "screenId": "65d1da2ef2ca41a58d933102d8ec7fa9",
+    "title": "Insights - Approval Loop Probe",
+    "componentName": "InsightsApprovalLoopProbe",
+    "file": "src/screens/InsightsApprovalLoopProbe.tsx",
+    "buttons": 5,
+    "inputs": 0,
+    "links": 5,
+    "actions": [
+      {
+        "id": "new-record-1",
+        "kind": "button",
+        "label": "New Record",
+        "index": 0
+      },
+      {
+        "id": "filter-2",
+        "kind": "button",
+        "label": "Filter",
+        "index": 1
+      },
+      {
+        "id": "export-summary-3",
+        "kind": "button",
+        "label": "Export Summary",
+        "index": 2
+      },
+      {
+        "id": "review-4",
+        "kind": "button",
+        "label": "Review",
+        "index": 3
+      },
+      {
+        "id": "trace-5",
+        "kind": "button",
+        "label": "Trace",
+        "index": 4
+      },
+      {
+        "id": "operations-1",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "editor-2",
+        "kind": "link",
+        "label": "Editor",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "insights-3",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "settings-4",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "support-5",
+        "kind": "link",
+        "label": "Support",
+        "href": "#",
+        "index": 4
+      }
+    ]
+  },
+  {
+    "screenId": "4ebb4d931aee41ab83e24efac56442ec",
+    "title": "Record Editor - Approval Loop Probe",
+    "componentName": "RecordEditorApprovalLoopProbe",
+    "file": "src/screens/RecordEditorApprovalLoopProbe.tsx",
+    "buttons": 6,
+    "inputs": 8,
+    "links": 5,
+    "actions": [
+      {
+        "id": "new-record-1",
+        "kind": "button",
+        "label": "New Record",
+        "index": 0
+      },
+      {
+        "id": "cancel-2",
+        "kind": "button",
+        "label": "Cancel",
+        "index": 1
+      },
+      {
+        "id": "save-record-3",
+        "kind": "button",
+        "label": "Save Record",
+        "index": 2
+      },
+      {
+        "id": "add-metric-4",
+        "kind": "button",
+        "label": "Add Metric",
+        "index": 3
+      },
+      {
+        "id": "remove-metric-5",
+        "kind": "button",
+        "label": "Remove Metric",
+        "index": 4
+      },
+      {
+        "id": "remove-metric-6",
+        "kind": "button",
+        "label": "Remove Metric",
+        "index": 5
+      },
+      {
+        "id": "operations-1",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "editor-2",
+        "kind": "link",
+        "label": "Editor",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "insights-3",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "settings-4",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "support-5",
+        "kind": "link",
+        "label": "Support",
+        "href": "#",
+        "index": 4
+      }
+    ]
+  },
+  {
+    "screenId": "7e22d4f91149413590827caaa6b5e91a",
+    "title": "Record Operations - Approval Loop Probe",
+    "componentName": "RecordOperationsApprovalLoopProbe",
+    "file": "src/screens/RecordOperationsApprovalLoopProbe.tsx",
+    "buttons": 10,
+    "inputs": 1,
+    "links": 5,
+    "actions": [
+      {
+        "id": "new-record-1",
+        "kind": "button",
+        "label": "New Record",
+        "index": 0
+      },
+      {
+        "id": "new-record-2",
+        "kind": "button",
+        "label": "New Record",
+        "index": 1
+      },
+      {
+        "id": "filter-3",
+        "kind": "button",
+        "label": "Filter",
+        "index": 2
+      },
+      {
+        "id": "edit-4",
+        "kind": "button",
+        "label": "Edit",
+        "index": 3
+      },
+      {
+        "id": "edit-5",
+        "kind": "button",
+        "label": "Edit",
+        "index": 4
+      },
+      {
+        "id": "retry-load-6",
+        "kind": "button",
+        "label": "Retry Load",
+        "index": 5
+      },
+      {
+        "id": "edit-7",
+        "kind": "button",
+        "label": "Edit",
+        "index": 6
+      },
+      {
+        "id": "close-8",
+        "kind": "button",
+        "label": "Close",
+        "index": 7
+      },
+      {
+        "id": "review-9",
+        "kind": "button",
+        "label": "Review",
+        "index": 8
+      },
+      {
+        "id": "approve-10",
+        "kind": "button",
+        "label": "Approve",
+        "index": 9
+      },
+      {
+        "id": "operations-1",
+        "kind": "link",
+        "label": "Operations",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "editor-2",
+        "kind": "link",
+        "label": "Editor",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "insights-3",
+        "kind": "link",
+        "label": "Insights",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "settings-4",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 3
+      },
+      {
+        "id": "support-5",
+        "kind": "link",
+        "label": "Support",
+        "href": "#",
+        "index": 4
+      }
+    ]
+  }
+]
